@@ -144,7 +144,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+        // Features::registration(), // Disabled - use CLI command instead
         Features::resetPasswords(),
         Features::emailVerification(),
         Features::twoFactorAuthentication([
