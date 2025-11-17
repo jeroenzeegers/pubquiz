@@ -90,36 +90,38 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                     </div>
 
                     {flash?.success && (
-                        <Alert className="mb-6 border-green-200 bg-green-50 text-green-900 dark:border-green-800 dark:bg-green-950 dark:text-green-100">
+                        <Alert className="mb-6 animate-in fade-in slide-in-from-top-2 border-green-200 bg-green-50 text-green-900 duration-500 dark:border-green-800 dark:bg-green-950 dark:text-green-100">
                             <CheckCircle2Icon className="text-green-600 dark:text-green-400" />
                             <AlertTitle>Gelukt!</AlertTitle>
                             <AlertDescription>{flash.success}</AlertDescription>
                         </Alert>
                     )}
 
-                    <div className="rounded-lg border border-orange-200 bg-white p-6 shadow-lg dark:border-orange-800 dark:bg-neutral-900">
+                    {/* Form with delay animation */}
+                    <div className="animate-in fade-in slide-in-from-bottom-4 rounded-xl border border-orange-200 bg-white/80 p-6 shadow-2xl backdrop-blur-sm delay-300 duration-700 dark:border-orange-800 dark:bg-neutral-900/80">
                         <Form action="/" method="post">
                             {({ errors, processing }) => (
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <Label htmlFor="name">Naam</Label>
+                                <div className="flex flex-col gap-5">
+                                    <div className="group flex flex-col gap-2">
+                                        <Label htmlFor="name" className="font-semibold">Team naam</Label>
                                         <Input
                                             id="name"
                                             name="name"
                                             type="text"
-                                            placeholder="Team naam"
+                                            placeholder="De Slimme Vossen"
                                             required
                                             aria-invalid={errors.name ? 'true' : 'false'}
+                                            className="transition-all duration-200 focus:scale-[1.02]"
                                         />
                                         {errors.name && (
-                                            <p className="text-sm text-red-600 dark:text-red-400">
+                                            <p className="animate-in slide-in-from-top-1 text-sm font-medium text-red-600 duration-200 dark:text-red-400">
                                                 {errors.name}
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="flex flex-col gap-2">
-                                        <Label htmlFor="team_size">Aantal personen in team</Label>
+                                    <div className="group flex flex-col gap-2">
+                                        <Label htmlFor="team_size" className="font-semibold">Aantal personen in team</Label>
                                         <Input
                                             id="team_size"
                                             name="team_size"
@@ -129,16 +131,17 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                                             placeholder="Bijv. 4"
                                             required
                                             aria-invalid={errors.team_size ? 'true' : 'false'}
+                                            className="transition-all duration-200 focus:scale-[1.02]"
                                         />
                                         {errors.team_size && (
-                                            <p className="text-sm text-red-600 dark:text-red-400">
+                                            <p className="animate-in slide-in-from-top-1 text-sm font-medium text-red-600 duration-200 dark:text-red-400">
                                                 {errors.team_size}
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="flex flex-col gap-2">
-                                        <Label htmlFor="email">E-mailadres</Label>
+                                    <div className="group flex flex-col gap-2">
+                                        <Label htmlFor="email" className="font-semibold">E-mailadres</Label>
                                         <Input
                                             id="email"
                                             name="email"
@@ -146,9 +149,10 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                                             placeholder="team@voorbeeld.nl"
                                             required
                                             aria-invalid={errors.email ? 'true' : 'false'}
+                                            className="transition-all duration-200 focus:scale-[1.02]"
                                         />
                                         {errors.email && (
-                                            <p className="text-sm text-red-600 dark:text-red-400">
+                                            <p className="animate-in slide-in-from-top-1 text-sm font-medium text-red-600 duration-200 dark:text-red-400">
                                                 {errors.email}
                                             </p>
                                         )}
@@ -157,23 +161,35 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                                     <Button
                                         type="submit"
                                         disabled={processing || remainingSpots === 0}
-                                        className="mt-2 w-full"
+                                        className="mt-3 h-12 w-full transform bg-gradient-to-r from-orange-600 to-orange-700 text-base font-semibold shadow-lg transition-all duration-200 hover:scale-[1.02] hover:from-orange-700 hover:to-orange-800 hover:shadow-xl active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
                                     >
-                                        {processing ? 'Aanmelden...' : 'Aanmelden'}
+                                        {processing ? (
+                                            <span className="flex items-center gap-2">
+                                                <svg className="size-5 animate-spin" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                </svg>
+                                                Aanmelden...
+                                            </span>
+                                        ) : (
+                                            'Aanmelden voor Pubquiz'
+                                        )}
                                     </Button>
 
                                     {remainingSpots === 0 && (
-                                        <p className="text-center text-sm text-red-600 dark:text-red-400">
-                                            De pubquiz is helaas vol.
-                                        </p>
+                                        <div className="animate-in fade-in rounded-lg bg-red-50 p-4 text-center duration-500 dark:bg-red-950">
+                                            <p className="text-sm font-semibold text-red-600 dark:text-red-400">
+                                                De pubquiz is helaas vol.
+                                            </p>
+                                        </div>
                                     )}
                                 </div>
                             )}
                         </Form>
                     </div>
 
-                    <p className="mt-6 text-center text-sm text-orange-800 dark:text-orange-200">
-                        Na aanmelding ontvang je een bevestiging per e-mail.
+                    <p className="mt-6 animate-in fade-in text-center text-sm text-orange-800 delay-500 duration-700 dark:text-orange-200">
+                        Na aanmelding ontvang je een bevestiging per e-mail op <strong>s.james@muzee.nl</strong>
                     </p>
                 </div>
             </div>
