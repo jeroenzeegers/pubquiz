@@ -21,6 +21,7 @@ test('users can register for the quiz', function () {
 
     $data = [
         'name' => 'Team Awesome',
+        'contact_name' => 'John Doe',
         'team_size' => 4,
         'email' => 'team@example.com',
     ];
@@ -41,6 +42,7 @@ test('users can register for the quiz', function () {
 
 test('name is required', function () {
     $response = $this->withoutMiddleware()->post('/', [
+        'contact_name' => 'John Doe',
         'team_size' => 4,
         'email' => 'test@example.com',
     ]);
@@ -48,9 +50,20 @@ test('name is required', function () {
     $response->assertInvalid(['name']);
 });
 
+test('contact name is required', function () {
+    $response = $this->withoutMiddleware()->post('/', [
+        'name' => 'Team Name',
+        'team_size' => 4,
+        'email' => 'test@example.com',
+    ]);
+
+    $response->assertInvalid(['contact_name']);
+});
+
 test('team size is required', function () {
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'email' => 'test@example.com',
     ]);
 
@@ -60,6 +73,7 @@ test('team size is required', function () {
 test('email is required', function () {
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 4,
     ]);
 
@@ -69,6 +83,7 @@ test('email is required', function () {
 test('email must be valid', function () {
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 4,
         'email' => 'not-an-email',
     ]);
@@ -79,6 +94,7 @@ test('email must be valid', function () {
 test('team size must be at least 1', function () {
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 0,
         'email' => 'test@example.com',
     ]);
@@ -89,6 +105,7 @@ test('team size must be at least 1', function () {
 test('team size must not exceed 8', function () {
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 9,
         'email' => 'test@example.com',
     ]);
@@ -101,6 +118,7 @@ test('registration is rejected when total capacity would exceed 60', function ()
 
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 6,
         'email' => 'test@example.com',
     ]);
@@ -115,6 +133,7 @@ test('registration is accepted when capacity is exactly reached', function () {
 
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
+        'contact_name' => 'John Doe',
         'team_size' => 4,
         'email' => 'test@example.com',
     ]);

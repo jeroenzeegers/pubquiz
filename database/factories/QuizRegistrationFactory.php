@@ -17,7 +17,8 @@ class QuizRegistrationFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'name' => fake()->company(),
+            'contact_name' => fake()->name(),
             'team_size' => fake()->numberBetween(1, 8),
             'email' => fake()->unique()->safeEmail(),
         ];
