@@ -189,7 +189,7 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                     </div>
 
                     <p className="mt-6 animate-in fade-in text-center text-sm text-orange-800 delay-500 duration-700 dark:text-orange-200">
-                        Na aanmelding ontvang je een bevestiging per e-mail op <strong>s.james@muzee.nl</strong>
+                        Na aanmelding ontvang je een bevestiging per e-mail.
                     </p>
                 </div>
             </div>
