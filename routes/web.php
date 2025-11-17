@@ -1,14 +1,11 @@
 <?php
 
+use App\Http\Controllers\QuizRegistrationController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Laravel\Fortify\Features;
 
-Route::get('/', function () {
-    return Inertia::render('welcome', [
-        'canRegister' => Features::enabled(Features::registration()),
-    ]);
-})->name('home');
+Route::get('/', [QuizRegistrationController::class, 'index'])->name('quiz.register');
+Route::post('/', [QuizRegistrationController::class, 'store'])->name('quiz.store');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
