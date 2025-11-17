@@ -19,71 +19,71 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
     return (
         <>
             <Head title="Pubquiz Aanmelding" />
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-orange-100 p-6 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-800">
+            <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#96EDF7]/20 via-white to-[#96EDF7]/30 p-6 dark:from-[#042445] dark:via-[#042445]/80 dark:to-[#032EFF]/20">
                 <div className="w-full max-w-md">
                     {/* Header with staggered animation */}
                     <div className="mb-8 animate-in fade-in slide-in-from-top-4 text-center duration-700">
-                        <div className="mb-4 inline-flex rounded-full bg-orange-100 p-3 dark:bg-orange-950">
-                            <Sparkles className="size-8 text-orange-600 dark:text-orange-400" />
+                        <div className="mb-4 inline-flex rounded-full bg-[#EDD100]/20 p-3 dark:bg-[#EDD100]/10">
+                            <Sparkles className="size-8 text-[#032EFF] dark:text-[#96EDF7]" />
                         </div>
-                        <h1 className="mb-3 text-5xl font-bold tracking-tight text-orange-900 dark:text-orange-100">
+                        <h1 className="mb-3 text-5xl font-bold tracking-tight text-[#042445] dark:text-[#96EDF7]">
                             Weetje Ietta?
                         </h1>
-                        <p className="mb-2 text-xl font-semibold text-orange-800 dark:text-orange-200">
+                        <p className="mb-2 text-xl font-semibold text-[#042445]/90 dark:text-[#96EDF7]/90">
                             De Scheveningse Pubquiz
                         </p>
-                        <p className="text-sm font-medium text-orange-700 dark:text-orange-300">
+                        <p className="text-sm font-medium text-[#042445]/70 dark:text-[#96EDF7]/70">
                             onder leiding van Arie Spaans
                         </p>
                     </div>
 
                     {/* Info card with delay animation */}
-                    <div className="mb-6 animate-in fade-in slide-in-from-top-4 rounded-xl border border-orange-200 bg-white/80 p-6 shadow-xl backdrop-blur-sm delay-150 duration-700 dark:border-orange-800 dark:bg-neutral-900/80">
+                    <div className="mb-6 animate-in fade-in slide-in-from-top-4 rounded-xl border border-[#032EFF]/20 bg-white/90 p-6 shadow-xl backdrop-blur-sm delay-150 duration-700 dark:border-[#032EFF]/30 dark:bg-[#042445]/90">
                         <div className="mb-5 flex items-center gap-3 transition-all hover:translate-x-1">
-                            <div className="rounded-lg bg-orange-100 p-2 dark:bg-orange-950">
-                                <Calendar className="size-5 text-orange-600 dark:text-orange-400" />
+                            <div className="rounded-lg bg-[#96EDF7]/30 p-2 dark:bg-[#032EFF]/20">
+                                <Calendar className="size-5 text-[#032EFF] dark:text-[#96EDF7]" />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+                                <p className="text-sm font-semibold text-[#042445]/90 dark:text-[#96EDF7]/90">
                                     Zaterdag 13 december
                                 </p>
                             </div>
                         </div>
                         <div className="mb-5 flex items-center gap-3 transition-all hover:translate-x-1">
-                            <div className="rounded-lg bg-orange-100 p-2 dark:bg-orange-950">
-                                <Clock className="size-5 text-orange-600 dark:text-orange-400" />
+                            <div className="rounded-lg bg-[#96EDF7]/30 p-2 dark:bg-[#032EFF]/20">
+                                <Clock className="size-5 text-[#032EFF] dark:text-[#96EDF7]" />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+                                <p className="text-sm font-semibold text-[#042445]/90 dark:text-[#96EDF7]/90">
                                     20:00 - 22:00 uur
                                 </p>
                             </div>
                         </div>
 
                         {/* Progress bar section */}
-                        <div className="space-y-3 border-t border-orange-200 pt-5 dark:border-orange-800">
+                        <div className="space-y-3 border-t border-[#032EFF]/20 pt-5 dark:border-[#032EFF]/30">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                    <Users className="size-5 text-orange-600 dark:text-orange-400" />
-                                    <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                                    <Users className="size-5 text-[#032EFF] dark:text-[#96EDF7]" />
+                                    <span className="text-sm font-medium text-[#042445]/90 dark:text-[#96EDF7]/90">
                                         Beschikbare plekken
                                     </span>
                                 </div>
-                                <span className="text-lg font-bold text-orange-600 dark:text-orange-400">
+                                <span className="text-lg font-bold text-[#032EFF] dark:text-[#EDD100]">
                                     {remainingSpots} / {totalSpots}
                                 </span>
                             </div>
 
                             {/* Animated progress bar */}
-                            <div className="relative h-3 overflow-hidden rounded-full bg-orange-100 dark:bg-orange-950">
+                            <div className="relative h-3 overflow-hidden rounded-full bg-[#96EDF7]/30 dark:bg-[#032EFF]/20">
                                 <div
-                                    className="h-full animate-in slide-in-from-left rounded-full bg-gradient-to-r from-orange-500 to-orange-600 shadow-sm transition-all duration-1000 ease-out dark:from-orange-600 dark:to-orange-700"
+                                    className="h-full animate-in slide-in-from-left rounded-full bg-gradient-to-r from-[#032EFF] to-[#032EFF]/80 shadow-sm transition-all duration-1000 ease-out dark:from-[#EDD100] dark:to-[#EDD100]/80"
                                     style={{ width: `${fillPercentage}%` }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                             </div>
 
-                            <p className="text-center text-xs text-neutral-600 dark:text-neutral-400">
+                            <p className="text-center text-xs text-[#042445]/70 dark:text-[#96EDF7]/70">
                                 {filledSpots} van {totalSpots} plekken bezet
                             </p>
                         </div>
@@ -98,7 +98,7 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                     )}
 
                     {/* Form with delay animation */}
-                    <div className="animate-in fade-in slide-in-from-bottom-4 rounded-xl border border-orange-200 bg-white/80 p-6 shadow-2xl backdrop-blur-sm delay-300 duration-700 dark:border-orange-800 dark:bg-neutral-900/80">
+                    <div className="animate-in fade-in slide-in-from-bottom-4 rounded-xl border border-[#032EFF]/20 bg-white/90 p-6 shadow-2xl backdrop-blur-sm delay-300 duration-700 dark:border-[#032EFF]/30 dark:bg-[#042445]/90">
                         <Form action="/" method="post">
                             {({ errors, processing }) => (
                                 <div className="flex flex-col gap-5">
@@ -116,6 +116,24 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                                         {errors.name && (
                                             <p className="animate-in slide-in-from-top-1 text-sm font-medium text-red-600 duration-200 dark:text-red-400">
                                                 {errors.name}
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    <div className="group flex flex-col gap-2">
+                                        <Label htmlFor="contact_name" className="font-semibold">Naam contactpersoon</Label>
+                                        <Input
+                                            id="contact_name"
+                                            name="contact_name"
+                                            type="text"
+                                            placeholder="Jan Jansen"
+                                            required
+                                            aria-invalid={errors.contact_name ? 'true' : 'false'}
+                                            className="transition-all duration-200 focus:scale-[1.02]"
+                                        />
+                                        {errors.contact_name && (
+                                            <p className="animate-in slide-in-from-top-1 text-sm font-medium text-red-600 duration-200 dark:text-red-400">
+                                                {errors.contact_name}
                                             </p>
                                         )}
                                     </div>
@@ -161,7 +179,7 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                                     <Button
                                         type="submit"
                                         disabled={processing || remainingSpots === 0}
-                                        className="mt-3 h-12 w-full transform bg-gradient-to-r from-orange-600 to-orange-700 text-base font-semibold shadow-lg transition-all duration-200 hover:scale-[1.02] hover:from-orange-700 hover:to-orange-800 hover:shadow-xl active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
+                                        className="mt-3 h-12 w-full transform bg-gradient-to-r from-[#032EFF] to-[#032EFF]/90 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] hover:from-[#032EFF]/90 hover:to-[#032EFF]/80 hover:shadow-xl active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100 dark:from-[#EDD100] dark:to-[#EDD100]/90 dark:text-[#042445] dark:hover:from-[#EDD100]/90 dark:hover:to-[#EDD100]/80"
                                     >
                                         {processing ? (
                                             <span className="flex items-center gap-2">
@@ -188,7 +206,7 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                         </Form>
                     </div>
 
-                    <p className="mt-6 animate-in fade-in text-center text-sm text-orange-800 delay-500 duration-700 dark:text-orange-200">
+                    <p className="mt-6 animate-in fade-in text-center text-sm text-[#042445]/80 delay-500 duration-700 dark:text-[#96EDF7]/80">
                         Na aanmelding ontvang je een bevestiging per e-mail.
                     </p>
                 </div>

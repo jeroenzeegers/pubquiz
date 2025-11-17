@@ -17,6 +17,7 @@ class QuizRegistration extends Model
      */
     protected $fillable = [
         'name',
+        'contact_name',
         'team_size',
         'email',
     ];

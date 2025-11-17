@@ -24,6 +24,7 @@ class StoreQuizRegistrationRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
+            'contact_name' => ['required', 'string', 'max:255'],
             'team_size' => [
                 'required',
                 'integer',
@@ -49,8 +50,10 @@ class StoreQuizRegistrationRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Naam is verplicht.',
-            'name.max' => 'Naam mag maximaal 255 karakters bevatten.',
+            'name.required' => 'Teamnaam is verplicht.',
+            'name.max' => 'Teamnaam mag maximaal 255 karakters bevatten.',
+            'contact_name.required' => 'Naam contactpersoon is verplicht.',
+            'contact_name.max' => 'Naam contactpersoon mag maximaal 255 karakters bevatten.',
             'team_size.required' => 'Aantal personen in team is verplicht.',
             'team_size.integer' => 'Aantal personen moet een geldig getal zijn.',
             'team_size.min' => 'Een team moet minimaal 1 persoon bevatten.',
