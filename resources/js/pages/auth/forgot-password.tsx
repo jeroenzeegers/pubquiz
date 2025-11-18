@@ -1,23 +1,24 @@
 // Components
 import { login } from '@/routes';
 import { email } from '@/routes/password';
-import { Form, Head } from '@inertiajs/react';
+import { Form } from '@inertiajs/react';
 import { LoaderCircle } from 'lucide-react';
 
 import InputError from '@/components/input-error';
+import Seo, { type SeoProps } from '@/components/seo';
 import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
 
-export default function ForgotPassword({ status }: { status?: string }) {
+export default function ForgotPassword({ status, seo }: { status?: string; seo: SeoProps }) {
     return (
         <AuthLayout
             title="Forgot password"
             description="Enter your email to receive a password reset link"
         >
-            <Head title="Forgot password" />
+            <Seo {...seo} />
 
             {status && (
                 <div className="mb-4 text-center text-sm font-medium text-green-600">
