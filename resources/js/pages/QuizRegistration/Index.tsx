@@ -2,23 +2,62 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Head, usePage } from '@inertiajs/react';
+import Seo, { type SeoProps } from '@/components/seo';
+import StructuredData from '@/components/structured-data';
+import { usePage } from '@inertiajs/react';
 import { Form } from '@inertiajs/react';
 import { Beer, Calendar, CheckCircle2Icon, Clock, Users } from 'lucide-react';
 
 interface Props {
     remainingSpots: number;
+    seo: SeoProps;
 }
 
-export default function QuizRegistrationIndex({ remainingSpots }: Props) {
+export default function QuizRegistrationIndex({ remainingSpots, seo }: Props) {
     const { flash } = usePage().props as any;
     const totalSpots = 60;
     const filledSpots = totalSpots - remainingSpots;
     const fillPercentage = (filledSpots / totalSpots) * 100;
 
+    // Structured data for Event schema
+    const eventStructuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: 'Weetje Ietta? - De Scheveningse Pubquiz',
+        description: 'De Scheveningse Pubquiz onder leiding van Arie Spaans',
+        startDate: '2025-12-13T20:00:00+01:00',
+        endDate: '2025-12-13T22:00:00+01:00',
+        eventStatus: 'https://schema.org/EventScheduled',
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        location: {
+            '@type': 'Place',
+            name: 'Scheveningen',
+            address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Scheveningen',
+                addressRegion: 'Zuid-Holland',
+                addressCountry: 'NL',
+            },
+        },
+        organizer: {
+            '@type': 'Person',
+            name: 'Arie Spaans',
+        },
+        offers: {
+            '@type': 'Offer',
+            availability: remainingSpots > 0 ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
+            validFrom: '2025-11-01T00:00:00+01:00',
+        },
+        performer: {
+            '@type': 'Person',
+            name: 'Arie Spaans',
+        },
+    };
+
     return (
         <>
-            <Head title="Pubquiz Aanmelding" />
+            <Seo {...seo} />
+            <StructuredData data={eventStructuredData} />
             <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#96EDF7]/20 via-white to-[#96EDF7]/30 p-6 dark:from-[#042445] dark:via-[#042445]/80 dark:to-[#032EFF]/20">
                 <div className="w-full max-w-md">
                     {/* Header with staggered animation */}

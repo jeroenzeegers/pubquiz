@@ -18,6 +18,12 @@ class QuizRegistrationController extends Controller
 
         return Inertia::render('QuizRegistration/Index', [
             'remainingSpots' => $remainingSpots,
+            'seo' => [
+                'title' => 'Pubquiz Aanmelding - Weetje Ietta?',
+                'description' => 'Meld je aan voor de Scheveningse Pubquiz onder leiding van Arie Spaans. Zaterdag 13 december van 20:00 tot 22:00 uur. Nog ' . max(0, $remainingSpots) . ' plekken beschikbaar!',
+                'url' => config('app.url'),
+                'type' => 'event',
+            ],
         ]);
     }
 

@@ -1,4 +1,5 @@
 import InputError from '@/components/input-error';
+import Seo, { type SeoProps } from '@/components/seo';
 import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -8,25 +9,27 @@ import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
-import { Form, Head } from '@inertiajs/react';
+import { Form } from '@inertiajs/react';
 
 interface LoginProps {
     status?: string;
     canResetPassword: boolean;
     canRegister: boolean;
+    seo: SeoProps;
 }
 
 export default function Login({
     status,
     canResetPassword,
     canRegister,
+    seo,
 }: LoginProps) {
     return (
         <AuthLayout
             title="Log in to your account"
             description="Enter your email and password below to log in"
         >
-            <Head title="Log in" />
+            <Seo {...seo} />
 
             <Form
                 {...store.form()}

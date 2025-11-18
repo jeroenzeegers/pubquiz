@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /settings
+Disallow: /verify-email
+Disallow: /two-factor-challenge
+Disallow: /confirm-password
+
+Allow: /
+Allow: /login
+Allow: /forgot-password
