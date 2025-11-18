@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Head, usePage } from '@inertiajs/react';
 import { Form } from '@inertiajs/react';
-import { Calendar, CheckCircle2Icon, Clock, Sparkles, Users } from 'lucide-react';
+import { Beer, Calendar, CheckCircle2Icon, Clock, Users } from 'lucide-react';
 
 interface Props {
     remainingSpots: number;
@@ -24,7 +24,7 @@ export default function QuizRegistrationIndex({ remainingSpots }: Props) {
                     {/* Header with staggered animation */}
                     <div className="mb-8 animate-in fade-in slide-in-from-top-4 text-center duration-700">
                         <div className="mb-4 inline-flex rounded-full bg-[#EDD100]/20 p-3 dark:bg-[#EDD100]/10">
-                            <Sparkles className="size-8 text-[#032EFF] dark:text-[#96EDF7]" />
+                            <Beer className="size-8 text-[#032EFF] dark:text-[#96EDF7]" />
                         </div>
                         <h1 className="mb-3 text-5xl font-bold tracking-tight text-[#042445] dark:text-[#96EDF7]">
                             Weetje Ietta?
