@@ -14,13 +14,13 @@ class QuizRegistrationController extends Controller
     public function index(): Response
     {
         $currentTotal = QuizRegistration::sum('team_size');
-        $remainingSpots = 60 - $currentTotal;
+        $remainingSpots = 75 - $currentTotal;
 
         return Inertia::render('QuizRegistration/Index', [
             'remainingSpots' => $remainingSpots,
             'seo' => [
                 'title' => 'Pubquiz Aanmelding - Weetje Ietta?',
-                'description' => 'Meld je aan voor de Scheveningse Pubquiz onder leiding van Arie Spaans. Zaterdag 13 december van 20:00 tot 22:00 uur. Nog ' . max(0, $remainingSpots) . ' plekken beschikbaar!',
+                'description' => 'Meld je aan voor de Scheveningse Pubquiz onder leiding van Arie Spaans. Zaterdag 13 december van 20:00 tot 22:00 uur. Nog '.max(0, $remainingSpots).' plekken beschikbaar!',
                 'url' => config('app.url'),
                 'type' => 'event',
             ],
