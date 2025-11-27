@@ -32,8 +32,8 @@ class StoreQuizRegistrationRequest extends FormRequest
                 'max:8',
                 function ($attribute, $value, $fail) {
                     $currentTotal = QuizRegistration::sum('team_size');
-                    if ($currentTotal + $value > 60) {
-                        $remaining = 60 - $currentTotal;
+                    if ($currentTotal + $value > 75) {
+                        $remaining = 75 - $currentTotal;
                         $fail("Er zijn nog maar {$remaining} plekken beschikbaar. Jouw team van {$value} personen past helaas niet meer.");
                     }
                 },

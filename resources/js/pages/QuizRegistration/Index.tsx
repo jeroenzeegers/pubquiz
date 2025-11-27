@@ -15,7 +15,7 @@ interface Props {
 
 export default function QuizRegistrationIndex({ remainingSpots, seo }: Props) {
     const { flash } = usePage().props as any;
-    const totalSpots = 60;
+    const totalSpots = 75;
     const filledSpots = totalSpots - remainingSpots;
     const fillPercentage = (filledSpots / totalSpots) * 100;
 

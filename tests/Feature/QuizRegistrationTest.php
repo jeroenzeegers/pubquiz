@@ -113,8 +113,8 @@ test('team size must not exceed 8', function () {
     $response->assertInvalid(['team_size']);
 });
 
-test('registration is rejected when total capacity would exceed 60', function () {
-    QuizRegistration::factory()->create(['team_size' => 55]);
+test('registration is rejected when total capacity would exceed 75', function () {
+    QuizRegistration::factory()->create(['team_size' => 70]);
 
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
@@ -129,7 +129,7 @@ test('registration is rejected when total capacity would exceed 60', function ()
 test('registration is accepted when capacity is exactly reached', function () {
     Mail::fake();
 
-    QuizRegistration::factory()->create(['team_size' => 56]);
+    QuizRegistration::factory()->create(['team_size' => 71]);
 
     $response = $this->withoutMiddleware()->post('/', [
         'name' => 'Team Name',
