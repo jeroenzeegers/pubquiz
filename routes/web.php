@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\QuizRegistrationController as AdminQuizRegistrationController;
 use App\Http\Controllers\QuizRegistrationController;
+use App\Livewire\Admin\QuizRegistrations;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,7 +13,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
-    Route::get('admin/quiz-registrations', [AdminQuizRegistrationController::class, 'index'])->name('admin.quiz-registrations.index');
+    Route::get('admin/quiz-registrations', QuizRegistrations::class)->name('admin.quiz-registrations.index');
 });
 
 require __DIR__.'/settings.php';

@@ -53,7 +53,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'Inloggen - Weetje Ietta?',
                 'description' => 'Log in op je account voor de Scheveningse Pubquiz.',
-                'url' => config('app.url') . '/login',
+                'url' => config('app.url').'/login',
             ],
         ]));
 
@@ -63,7 +63,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'Wachtwoord resetten - Weetje Ietta?',
                 'description' => 'Reset je wachtwoord voor de Scheveningse Pubquiz.',
-                'url' => config('app.url') . '/reset-password',
+                'url' => config('app.url').'/reset-password',
             ],
         ]));
 
@@ -72,7 +72,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'Wachtwoord vergeten - Weetje Ietta?',
                 'description' => 'Vraag een wachtwoord reset link aan voor je account.',
-                'url' => config('app.url') . '/forgot-password',
+                'url' => config('app.url').'/forgot-password',
             ],
         ]));
 
@@ -81,7 +81,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'E-mail verificatie - Weetje Ietta?',
                 'description' => 'Verifieer je e-mailadres om verder te gaan.',
-                'url' => config('app.url') . '/verify-email',
+                'url' => config('app.url').'/verify-email',
             ],
         ]));
 
@@ -89,7 +89,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'Twee-factor authenticatie - Weetje Ietta?',
                 'description' => 'Voer je twee-factor authenticatie code in.',
-                'url' => config('app.url') . '/two-factor-challenge',
+                'url' => config('app.url').'/two-factor-challenge',
             ],
         ]));
 
@@ -97,7 +97,7 @@ class FortifyServiceProvider extends ServiceProvider
             'seo' => [
                 'title' => 'Bevestig wachtwoord - Weetje Ietta?',
                 'description' => 'Bevestig je wachtwoord om verder te gaan.',
-                'url' => config('app.url') . '/confirm-password',
+                'url' => config('app.url').'/confirm-password',
             ],
         ]));
     }
