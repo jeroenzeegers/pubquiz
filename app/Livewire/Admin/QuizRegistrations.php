@@ -7,6 +7,11 @@ use Livewire\Component;
 
 class QuizRegistrations extends Component
 {
+    public function delete(QuizRegistration $registration): void
+    {
+        $registration->delete();
+    }
+
     public function render()
     {
         $registrations = QuizRegistration::query()
