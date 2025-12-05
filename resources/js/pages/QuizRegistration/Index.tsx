@@ -98,34 +98,6 @@ export default function QuizRegistrationIndex({ remainingSpots, seo }: Props) {
                                 </p>
                             </div>
                         </div>
-
-                        {/* Progress bar section */}
-                        <div className="space-y-3 border-t border-[#032EFF]/20 pt-5 dark:border-[#032EFF]/30">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <Users className="size-5 text-[#032EFF] dark:text-[#96EDF7]" />
-                                    <span className="text-sm font-medium text-[#042445]/90 dark:text-[#96EDF7]/90">
-                                        Beschikbare plekken
-                                    </span>
-                                </div>
-                                <span className="text-lg font-bold text-[#032EFF] dark:text-[#EDD100]">
-                                    {remainingSpots} / {totalSpots}
-                                </span>
-                            </div>
-
-                            {/* Animated progress bar */}
-                            <div className="relative h-3 overflow-hidden rounded-full bg-[#96EDF7]/30 dark:bg-[#032EFF]/20">
-                                <div
-                                    className="h-full animate-in slide-in-from-left rounded-full bg-gradient-to-r from-[#032EFF] to-[#032EFF]/80 shadow-sm transition-all duration-1000 ease-out dark:from-[#EDD100] dark:to-[#EDD100]/80"
-                                    style={{ width: `${fillPercentage}%` }}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                            </div>
-
-                            <p className="text-center text-xs text-[#042445]/70 dark:text-[#96EDF7]/70">
-                                {filledSpots} van {totalSpots} plekken bezet
-                            </p>
-                        </div>
                     </div>
 
                     {flash?.success && (
